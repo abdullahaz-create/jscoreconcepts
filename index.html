@@ -7,28 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <h1>JavaScript Concepts Demonstration</h1>
+
     <div class="button-container">
-       <button onclick="showHoisting()">
+
+        <button onclick="showHoisting()">
             Hoisting Demo
         </button>
+
         <button onclick="showExecutionContext()">
             Execution Context Demo
         </button>
+
         <button onclick="showClosure()">
             Closure Demo
         </button>
+
         <button onclick="showThis()">
             this Keyword Demo
         </button>
+
         <button onclick="showEventLoop()">
             Event Loop Demo
         </button>
-    </div>
-    <hr>
-    <div id="output"></div>
 
+        <button onclick="runMicroVsMacro()">
+            Microtask vs Macrotask Demo
+        </button>
+
+        <button onclick="runPromiseDemo()">
+            Promise Demo
+        </button>
+
+    </div>
+
+    <hr>
+
+    <pre id="output"></pre>
+
+    <script src="extra.js"></script>
     <script src="script.js"></script>
     <script src="eventloop.js"></script>
+    <script src="microvsmacro.js"></script>
+    <script src="promises.js"></script>
+
 </body>
 </html>
