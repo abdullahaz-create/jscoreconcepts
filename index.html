@@ -10,6 +10,7 @@
 
     <h1>JavaScript Concepts Demonstration</h1>
 
+    <!-- Existing Concepts -->
     <div class="button-container">
 
         <button onclick="showHoisting()">
@@ -33,7 +34,7 @@
         </button>
 
         <button onclick="runMicroVsMacro()">
-            Microtask vs Macrotask Demo
+            Microtask vs Macrotask
         </button>
 
         <button onclick="runPromiseDemo()">
@@ -43,14 +44,84 @@
     </div>
 
     <hr>
+    <h2>Async / Await</h2>
 
+    <button id="asyncBtn">
+        Get Data
+    </button>
+
+    <hr>
+    <h2>Event Bubbling & Capturing</h2>
+
+    <div id="parent" class="box">
+
+        Parent
+
+        <button id="child">
+            Click Me
+        </button>
+
+    </div>
     <pre id="output"></pre>
 
+    <hr>
+    <h2>Event Delegation</h2>
+
+    <ul id="fruitList">
+
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Orange</li>
+        <li>Banana</li>
+
+    </ul>
+    <hr>
+    <h2>Prototype Chain</h2>
+
+    <button id="prototypeBtn">
+        Show Prototype
+    </button>
+
+    <hr>
+    <h2>Deep Copy vs Shallow Copy</h2>
+
+    <button id="copyBtn">
+        Run Copy Demo
+    </button>
+
+    <hr>
+    <h2>Debouncing</h2>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Type something..."
+    >
+
+    <hr>
+    <h2>Throttling</h2>
+
+    <button id="throttleBtn">
+        Click Fast
+    </button>
+<pre id="output"></pre>
+    <hr>
+    <h2>Output</h2>
+
+    <pre id="output"></pre>
     <script src="extra.js"></script>
     <script src="script.js"></script>
     <script src="eventloop.js"></script>
     <script src="microvsmacro.js"></script>
     <script src="promises.js"></script>
+
+    <script src="async-await.js"></script>
+    <script src="eventbubbling-capturing.js"></script>
+    <script src="eventdelegation.js"></script>
+    <script src="prototypechain.js"></script>
+    <script src="deepcopyvsshallowcopy.js"></script>
+    <script src="debouncing.js"></script>
+    <script src="throttling.js"></script>
 
 </body>
 </html>
