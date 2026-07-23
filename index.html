@@ -5,123 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Concepts Demo</title>
     <link rel="stylesheet" href="style.css">
+
+    <script defer src="extra.js"></script>
+    <script defer src="script.js"></script>
+    <script defer src="eventloop.js"></script>
+    <script defer src="microvsmacro.js"></script>
+    <script defer src="promises.js"></script>
+    <script defer src="async-await.js"></script>
+    <script defer src="eventbubbling-capturing.js"></script>
+    <script defer src="eventdelegation.js"></script>
+    <script defer src="prototypechain.js"></script>
+    <script defer src="deepcopyvsshallowcopy.js"></script>
+    <script defer src="debouncing.js"></script>
+    <script defer src="throttling.js"></script>
 </head>
+
 <body>
 
-    <h1>JavaScript Concepts Demonstration</h1>
+<h1>JavaScript Concepts Demonstration</h1>
 
-    <!-- Existing Concepts -->
-    <div class="button-container">
+<div class="button-container">
 
-        <button onclick="showHoisting()">
-            Hoisting Demo
-        </button>
+    <button onclick="showHoisting()">Hoisting Demo</button>
 
-        <button onclick="showExecutionContext()">
-            Execution Context Demo
-        </button>
+    <button onclick="showExecutionContext()">Execution Context Demo</button>
 
-        <button onclick="showClosure()">
-            Closure Demo
-        </button>
+    <button onclick="showClosure()">Closure Demo</button>
 
-        <button onclick="showThis()">
-            this Keyword Demo
-        </button>
+    <button onclick="showThis()">this Keyword Demo</button>
 
-        <button onclick="showEventLoop()">
-            Event Loop Demo
-        </button>
+    <button onclick="showEventLoop()">Event Loop Demo</button>
 
-        <button onclick="runMicroVsMacro()">
-            Microtask vs Macrotask
-        </button>
+    <button onclick="runMicroVsMacro()">Microtask vs Macrotask</button>
 
-        <button onclick="runPromiseDemo()">
-            Promise Demo
-        </button>
+    <button onclick="runPromiseDemo()">Promise Demo</button>
 
-    </div>
+</div>
 
-    <hr>
-    <h2>Async / Await</h2>
+<hr>
 
-    <button id="asyncBtn">
-        Get Data
-    </button>
+<h2>Async / Await</h2>
 
-    <hr>
-    <h2>Event Bubbling & Capturing</h2>
+<button id="asyncBtn">Get Data</button>
 
-    <div id="parent" class="box">
+<hr>
 
-        Parent
+<h2>Event Bubbling & Capturing</h2>
 
-        <button id="child">
-            Click Me
-        </button>
+<div id="parent" class="box">
+    Parent
+    <button id="child">Click Me</button>
+</div>
 
-    </div>
-    <pre id="output"></pre>
+<hr>
 
-    <hr>
-    <h2>Event Delegation</h2>
+<h2>Event Delegation</h2>
 
-    <ul id="fruitList">
+<ul id="fruitList">
+    <li>Apple</li>
+    <li>Mango</li>
+    <li>Orange</li>
+    <li>Banana</li>
+</ul>
 
-        <li>Apple</li>
-        <li>Mango</li>
-        <li>Orange</li>
-        <li>Banana</li>
+<hr>
 
-    </ul>
-    <hr>
-    <h2>Prototype Chain</h2>
+<h2>Prototype Chain</h2>
 
-    <button id="prototypeBtn">
-        Show Prototype
-    </button>
+<button id="prototypeBtn">Show Prototype</button>
 
-    <hr>
-    <h2>Deep Copy vs Shallow Copy</h2>
+<hr>
 
-    <button id="copyBtn">
-        Run Copy Demo
-    </button>
+<h2>Deep Copy vs Shallow Copy</h2>
 
-    <hr>
-    <h2>Debouncing</h2>
+<button id="copyBtn">Run Copy Demo</button>
 
-    <input
-        type="text"
-        id="search"
-        placeholder="Type something..."
-    >
+<hr>
 
-    <hr>
-    <h2>Throttling</h2>
+<h2>Debouncing</h2>
 
-    <button id="throttleBtn">
-        Click Fast
-    </button>
+<input type="text" id="search" placeholder="Type something...">
+
+<hr>
+
+<h2>Throttling</h2>
+
+<button id="throttleBtn">Click Fast</button>
+
+<hr>
+
+<h2>Output</h2>
+
 <pre id="output"></pre>
-    <hr>
-    <h2>Output</h2>
-
-    <pre id="output"></pre>
-    <script src="extra.js"></script>
-    <script src="script.js"></script>
-    <script src="eventloop.js"></script>
-    <script src="microvsmacro.js"></script>
-    <script src="promises.js"></script>
-
-    <script src="async-await.js"></script>
-    <script src="eventbubbling-capturing.js"></script>
-    <script src="eventdelegation.js"></script>
-    <script src="prototypechain.js"></script>
-    <script src="deepcopyvsshallowcopy.js"></script>
-    <script src="debouncing.js"></script>
-    <script src="throttling.js"></script>
 
 </body>
 </html>

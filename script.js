@@ -1,111 +1,149 @@
-const output = document.getElementById("output");
-function print(text) {
-    output.innerHTML += text + "<br>";
-}
+// Wait until the HTML is loaded
+document.addEventListener("DOMContentLoaded", () => {
 
-function clearOutput() {
-    output.innerHTML = "";
-}
-// Hoisting
-function showHoisting() {
-    clearOutput();
-    print("Hoisting Implementation");
-    print("");
+    const output = document.getElementById("output");
 
-    print("Before variable declaration:");
-    print(x);   // undefined because of hoisting
-    var x = 10;
-    print("");
-    print("After variable declaration:");
-    print(x);
-}
- //execution context
-function first() {
+    function print(text = "") {
+        output.innerHTML += text + "<br>";
+    }
 
-    print("Entered First Function");
+    function clearOutput() {
+        output.innerHTML = "";
+    }
 
-    second();
+    // ---------------- HOISTING ----------------
 
-    print("First Function Finished");
+    window.showHoisting = function () {
 
-}
-function second() {
+        clearOutput();
 
-    print("Entered Second Function");
+        print("===== HOISTING =====");
+        print("");
 
-}
-function showExecutionContext() {
-   clearOutput();
+        print("Before declaration:");
+        print(x);
 
-    print("Execution Context");
-    print("");
+        var x = 10;
 
-    print("Global Execution Starts");
+        print("");
 
-    first();
+        print("After declaration:");
+        print(x);
 
-    print("Global Execution Ends");
-
-}
-// Closure k functions
-function createCounter() {
-    let count = 0;
-    return function () {
-        count++;
-        print("Counter Value: " + count);
-
+        print("");
+        print("Explanation:");
+        print("var declarations are hoisted.");
+        print("Only the declaration moves to the top.");
+        print("The value is assigned later.");
     };
 
-}
-const counter = createCounter();
-function showClosure() {
+    // ---------------- EXECUTION CONTEXT ----------------
 
-    clearOutput();
+    function second() {
+        print("Entered Second Function");
+    }
 
-    print(" Closure Implementation");
-    print("");
+    function first() {
+        print("Entered First Function");
 
-    print("Calling counter three times...");
+        second();
 
-    counter();
-    counter();
-    counter();
+        print("First Function Finished");
+    }
 
-    print("");
-    print("The inner function remembers the value of 'count'.");
-}
-// this implemntion
-const student = {
-    name: "Abdullah",
-    age: 19,
-    introduce: function () {
+    window.showExecutionContext = function () {
 
-        print("Inside Normal Function");
-        print("Name: " + this.name);
-        print("Age: " + this.age);
+        clearOutput();
 
-    },
-    arrowIntro: () => {
+        print("===== EXECUTION CONTEXT =====");
+        print("");
 
-        print("Inside Arrow Function");
-        print("Name: " + this.name);
+        print("Global Execution Starts");
+
+        first();
+
+        print("Global Execution Ends");
+    };
+
+    // ---------------- CLOSURE ----------------
+
+    function createCounter() {
+
+        let count = 0;
+
+        return function () {
+
+            count++;
+
+            print("Counter Value: " + count);
+
+        };
 
     }
 
-};
-function showThis() {
-    clearOutput();
-    print("'this' Implementation");
-    print("");
-    student.introduce();
-    print("");
-    student.arrowIntro();
-    print("");
-    print("Explanation:");
-    print("Normal functions have their own 'this',");
-    print("so 'this' refers to the student object.");
-    print("");
-    print("Arrow functions do not have their own 'this'.");
-    print("They inherit 'this' from the surrounding scope,");
-    print("so this.name becomes undefined.");
-}
+    const counter = createCounter();
+
+    window.showClosure = function () {
+
+        clearOutput();
+
+        print("===== CLOSURE =====");
+        print("");
+
+        counter();
+        counter();
+        counter();
+
+        print("");
+        print("The inner function remembers 'count'");
+        print("even after createCounter() has finished.");
+    };
+
+    // ---------------- THIS ----------------
+
+    const student = {
+
+        name: "Abdullah",
+
+        age: 19,
+
+        introduce: function () {
+
+            print("Normal Function");
+            print("Name : " + this.name);
+            print("Age  : " + this.age);
+
+        },
+
+        arrowIntro: () => {
+
+            print("Arrow Function");
+            print("Name : " + this.name);
+
+        }
+
+    };
+
+    window.showThis = function () {
+
+        clearOutput();
+
+        print("===== THIS KEYWORD =====");
+        print("");
+
+        student.introduce();
+
+        print("");
+
+        student.arrowIntro();
+
+        print("");
+
+        print("Explanation:");
+        print("Normal function -> this refers to student object.");
+        print("Arrow function -> this comes from outer scope.");
+        print("Therefore this.name is undefined.");
+
+    };
+
+});
